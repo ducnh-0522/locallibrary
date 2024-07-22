@@ -1,0 +1,14 @@
+h1 Oops!
+
+p There has been an error =(
+
+if error
+  p Error message: #{error.message}
+
+  if error.stack
+    pre
+      != error.stack
+
+  if statusCode
+    p Status code: #{statusCode}
+
