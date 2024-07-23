@@ -5,7 +5,8 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import http from "http";
-
+import "reflect-metadata";
+import { AppDataSource } from "./config/data-source";
 import indexRouter from "./routes/index";
 
 
@@ -32,6 +33,16 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     res.render("error");
 });
 
+// Init DB
+AppDataSource.initialize()
+    .then(() => {
+        console.log('Data-source has been initialized.');
+    })
+    .catch((err) => {
+        console.error('Error during Data-source initialization: ', err);
+    });
+
+// Serve
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

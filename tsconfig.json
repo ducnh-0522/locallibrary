@@ -11,16 +11,19 @@
     /* Module Resolution Options */
     "baseUrl": "./",
     "esModuleInterop": true,
-    
+
     /* Advanced Options */
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
     "paths": {
       "@src/*": [
         "src/*"
       ],
     },
-    "useUnknownInCatchVariables": false
+    "useUnknownInCatchVariables": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
     "src/**/*.ts",
