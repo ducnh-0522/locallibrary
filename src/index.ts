@@ -7,7 +7,7 @@ import logger from "morgan";
 import http from "http";
 import "reflect-metadata";
 import { AppDataSource } from "./config/data-source";
-import indexRouter from "./routes/index";
+import route from "./routes";
 
 
 const app = express();
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-app.use("/", indexRouter);
+app.use("", route);
 
 // Error handling
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
