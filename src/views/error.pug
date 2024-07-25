@@ -1,14 +1,6 @@
-h1 Oops!
+extends layout
 
-p There has been an error =(
-
-if error
-  p Error message: #{error.message}
-
-  if error.stack
-    pre
-      != error.stack
-
-  if statusCode
-    p Status code: #{statusCode}
-
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}

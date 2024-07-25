@@ -1,0 +1,27 @@
+{
+    "home": {
+        "welcome": "Chào mừng bạn đến với {{title}}.",
+        "content": "Nội dung",
+        "record_info": "Tình trạng thư viện của chúng tôi:",
+        "book": "Sách:",
+        "book_instance": "Bản sao sách:",
+        "available_book_instance": "Bảo sao sách có sẵn:",
+        "author": "Tác giả:",
+        "genre": "Thể loại:"
+    },
+    "sidebar": {
+        "home": "Thư viện địa phương",
+        "book": "Sách",
+        "author": "Tác giả",
+        "genre": "Thể loại",
+        "book_instance": "Bản sao sách",
+        "create_author": "Tạo mới tác giả",
+        "create_genre": "Tạo mới thể loại",
+        "create_book": "Tạo mới sách",
+        "create_book_instance": "Tạo mới bản sao sách",
+        "english": "Tiếng Anh",
+        "vietnamese": "Tiếng Việt"
+    },
+    "titleListBook": "Danh sách sách"
+}
+

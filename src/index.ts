@@ -8,7 +8,8 @@ import http from "http";
 import "reflect-metadata";
 import { AppDataSource } from "./config/data-source";
 import route from "./routes";
-
+import i18next from "./i18n";
+import i18nextMiddleware from "i18next-http-middleware";
 
 const app = express();
 
@@ -21,6 +22,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(i18nextMiddleware.handle(i18next));
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.locals.t = req.t;
+  next();
+});
 
 // Routes
 app.use("", route);

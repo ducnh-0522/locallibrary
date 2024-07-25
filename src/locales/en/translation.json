@@ -1,0 +1,27 @@
+{
+    "home": {
+        "welcome": "Welcome to {{title}}, a very basic Express website developed as a tutorial example.",
+        "content": "Dynamic content",
+        "record_info": "The library has the following record counts:",
+        "book": "Book(s):",
+        "book_instance": "Book instance(s):",
+        "available_book_instance": "Available book instance(s):",
+        "author": "Author(s):",
+        "genre": "Genre(s):"
+    },
+    "sidebar": {
+        "home": "Local Library",
+        "book": "Books",
+        "author": "Authors",
+        "genre": "Genres",
+        "book_instance": "Book Instances",
+        "create_author": "Create Author",
+        "create_genre": "Create Genre",
+        "create_book": "Create Book",
+        "create_book_instance": "Create Book Instance",
+        "english": "English",
+        "vietnamese": "Vietnamese"
+    },
+    "titleListBook": "Book List"
+}
+
