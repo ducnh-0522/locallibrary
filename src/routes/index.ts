@@ -4,15 +4,12 @@ import authorRouter from './author.route';
 import bookRouter from './book.route';
 import bookinstanceRouter from './bookInstance.route';
 import genreRouter from './genre.route';
+import { index } from '../controllers/book.controller';
 
 const router: Router = Router();
 
-/* GET home page. */
-router.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.render('index', { title: 'Express' });
-});
-
 /* Use Routes */
+router.use('/', index);
 router.use('/authors', authorRouter);
 router.use('/books', bookRouter);
 router.use('/bookInstances', bookinstanceRouter);

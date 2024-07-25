@@ -2,5 +2,12 @@ extends layout
 
 block content
     h1= title
-    p Welcome to #{title}
-
+    p #{t('home.welcome', {title: title})}
+    h1 #{t('home.content')}
+    p #{t('home.record_info')}
+    ul
+        li #[strong #{t('home.book')}] #{book_count}
+        li #[strong #{t('home.book_instance')}] #{book_instance_count}
+        li #[strong #{t('home.available_book_instance')}] #{book_instance_available_count}
+        li #[strong #{t('home.author')}] #{author_count}
+        li #[strong #{t('home.genre')}] #{genre_count}
