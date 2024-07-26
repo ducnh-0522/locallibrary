@@ -8,4 +8,10 @@ export class BookDAO {
         return await this.bookRepository.count();
     }
 
+    async getBooks() {
+        return await this.bookRepository.find({ 
+            order: { title: 'ASC' }, 
+            relations: ['author'] 
+        });
+    }
 }

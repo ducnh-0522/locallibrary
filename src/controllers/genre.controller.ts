@@ -1,8 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
+import { GenreDAO } from '../services/genre.dao';
 import asyncHandler from 'express-async-handler';
+import i18next from 'i18next';
+
+const genreDAO = new GenreDAO();
 
 export const genreList = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send('[NOT IMPLEMENTED] Genre list...');
+    const genres = await genreDAO.getGenres()
+    res.render('genres/', { genres, title: req.t('genre.title.listOfGenre') })
 });
 
 export const genreDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

@@ -1,8 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
+import { BookInstanceDAO } from '../services/book_instance.dao';
+import { BookInstanceStatus } from '../enums/book_instance_status';
 import asyncHandler from 'express-async-handler';
+import i18next from 'i18next';
+
+const bookInstanceDAO = new BookInstanceDAO();
 
 export const bookInstList = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send('[NOT IMPLEMENTED] BookInstance list...');
+    const bookInstances = await bookInstanceDAO.getBookInstances()
+    res.render('bookInstances/', { 
+        bookInstances, 
+        title: req.t('bookInstance.title.listOfBookInstance'),
+        BookInstanceStatus
+    })
 });
 
 export const bookInstDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

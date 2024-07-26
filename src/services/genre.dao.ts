@@ -8,4 +8,7 @@ export class GenreDAO {
         return await this.genreRepository.count();
     }
 
+    async getGenres() {
+        return await this.genreRepository.find({ order: { name: 'ASC' } })
+    }
 }

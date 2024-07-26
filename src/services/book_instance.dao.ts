@@ -13,4 +13,13 @@ export class BookInstanceDAO {
             where: { status: "Available" }
         });
     }
+
+    async getBookInstances() {
+        return await this.bookInstanceRepository.find({
+            relations: ['book'],
+            order: {
+              book: { title: 'ASC' },
+            },
+        });
+    }
 }

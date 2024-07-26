@@ -9,7 +9,7 @@ import { index } from '../controllers/book.controller';
 const router: Router = Router();
 
 /* Use Routes */
-router.use('/', index);
+router.get('/', index);
 router.use('/authors', authorRouter);
 router.use('/books', bookRouter);
 router.use('/bookInstances', bookinstanceRouter);

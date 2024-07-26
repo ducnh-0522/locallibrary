@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+	h1= title
+	if bookInstances.length
+		ul
+			each bookInstance in bookInstances
+				li
+					a(href=`/bookInstances/${bookInstance.id}`) #{bookInstance.book.title}  
+					if bookInstance.status === BookInstanceStatus.Available
+						span(class='text-success') #{t('bookInstance.status.available')} 
+					else if bookInstance.status === BookInstanceStatus.Maintenance
+						span(class='text-warning') #{t('bookInstance.status.maintenance')} 
+					else if bookInstance.status === BookInstanceStatus.Loaned
+						span(class='text-danger') #{t('bookInstance.status.loaned')} 
+					else
+						#{t('bookInstance.status')}
+					| #{bookInstance.dueBack ? '(Due: '+new Date(bookInstance.dueBack)+')': ''}
+	else
+		p #{t('noBookInstance')}

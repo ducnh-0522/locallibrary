@@ -8,4 +8,9 @@ export class AuthorDAO {
         return await this.authorRepository.count();
     }
 
+    async getAuthors() {
+        return await this.authorRepository.find({ 
+            order: { firstName: 'ASC' }
+        });
+    }
 }
