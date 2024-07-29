@@ -22,6 +22,40 @@
         "english": "English",
         "vietnamese": "Vietnamese"
     },
-    "titleListBook": "Book List"
+    "book": {
+        "title": {
+            "listOfBook": "Book List",
+            "noBook": "There are no books",
+            "summary": "Summary:",
+            "isbn": "ISBN",
+            "unknownSummary": "Unknown Summary",
+            "unknownIsbn": "Unknown ISBN"
+        }
+    },
+    "author": {
+        "title": {
+            "unknownAuthor": "Unknown Author",
+            "listOfAuthor": "Author List",
+            "noAuthor": "There are no authors"
+        }
+    },
+    "bookInstance": {
+        "title": {
+            "listOfBookInstance": "Book Instance List",
+            "noBookInstance": "There are no book instances"
+        },
+        "imprint": "Imprint",
+        "dueBack": "Due back",
+        "status": {
+            "available": "Available",
+            "maintenance": "Maintenance",
+            "loaned": "Loaned"
+        }
+    },
+    "genre": {
+        "title": {
+            "listOfGenre": "Genre List",
+            "noGenre": "There are no genres"
+        }
+    }
 }
-

@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	h1= title
+	if books.length
+		ul
+			each book in books
+				li
+					a(href=`/books/${book.id}`) #{book.title}
+					|  |  
+					a(href=`/authors/${book.author.id}`)
+					|  #{t('home.author')} #{book.author.firstName + ' ' + book.author.familyName || t('author.title.unknownAuthor')}
+	else
+		p There are no books.

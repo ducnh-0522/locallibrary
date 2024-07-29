@@ -37,7 +37,8 @@ export const index = asyncHandler(async (req: Request, res: Response, next: Next
 });
 
 export const bookList = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send('[NOT IMPLEMENTED] Book list...');
+    const books = await bookDAO.getBooks();
+    res.render('books/', { books, title: req.t('book.title.listOfBook') })
 });
 
 export const bookDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
