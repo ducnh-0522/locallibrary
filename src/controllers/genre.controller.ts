@@ -11,7 +11,18 @@ export const genreList = asyncHandler(async (req: Request, res: Response, next: 
 });
 
 export const genreDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send(`[NOT IMPLEMENTED] Genre detail: ${req.params.id}`);
+    const id = parseInt (req.params.id);
+    if (isNaN(id)) {
+        return res.render('error', { message: req.t('error.Invalid') });
+    }
+    const genre = await genreDAO.getGenreById(id);
+    if (!genre) {
+        return res.render('error', { message: req.t('error.NotFound') });
+    }
+    res.render('genres/show' , {
+        genre,
+        genreBooks: genre.books,
+    });
 });
 
 export const genreCreateGet = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

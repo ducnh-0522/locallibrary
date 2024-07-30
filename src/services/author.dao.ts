@@ -13,4 +13,11 @@ export class AuthorDAO {
             order: { firstName: 'ASC' }
         });
     }
+
+    async getAuthorById(id: number) {
+        return await this.authorRepository.findOne({
+            where: { id },
+            relations: ['books'],
+        });
+    }
 }

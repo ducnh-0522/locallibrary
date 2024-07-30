@@ -4,10 +4,11 @@ import * as authorController from '../controllers/author.controller';
 const router = express.Router();
 
 router.get('/', authorController.authorList);
-router.get('/:id', authorController.authorDetail);
 
 router.get('/create', authorController.authorCreateGet);
 router.post('/create', authorController.authorCreatePost);
+
+router.get('/:id', authorController.authorDetail);
 
 router.get('/:id/delete', authorController.authorDeleteGet);
 router.post('/:id/delete', authorController.authorDeletePost);

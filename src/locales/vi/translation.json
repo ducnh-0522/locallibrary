@@ -25,27 +25,25 @@
     "book": {
         "title": {
             "listOfBook": "Danh sách các tựa sách có trong thư viện",
-            "emptyBookList": "Không có quyển sách nào",
-            "summary": "Tóm tắt:",
-            "isbn": "Mã ISBN:",
-            "unknownSummary": "Không có tóm tắt",
-            "unknownIsbn": "Không có mã ISBN"
-        }
+            "bookDetail": "Thông tin chi tiết về sách"
+        },
+        "noBook": "Không có quyển sách nào.",
+        "bookNoInstances": "Không có bản sao nào của cuốn sách này."
     },
     "author": {
         "title": {
-            "unknownAuthor": "Không rõ tác giả",
             "listOfAuthor": "Danh sách tác giả",
-            "emptyAuthorList": "Không có tác giả nào"
-        }
+            "authorDetail": "Thông tin chi tiết về tác giả"
+        },
+        "noAuthor": "Không có tác giả nào.",
+        "authorNoBooks": "Tác giả này chưa có tác phẩm nào."
     },
     "bookInstance": {
         "title": {
             "listOfBookInstance": "Danh sách các bản sao sách có trong thư viện",
-            "emptyBookInstanceList": "Không có bản sao sách nào"
+            "bookInstanceDetail": "Thông tin chi tiết về bản sao sách"
         },
-        "imprint": "Ấn hiệu",
-        "dueBack": "Ngày trả sách",
+        "bookNoInstances": "Không có bản sao sách nào.",
         "status": {
             "available": "Có sẵn",
             "maintenance": "Bảo trì",
@@ -55,7 +53,36 @@
     "genre": {
         "title": {
             "listOfGenre": "Danh sách thể loại",
-            "emptyGenreList": "Không có thể loại nào"
-        }
+            "genreDetail": "Thông tin chi tiết về thể loại"
+        },
+        "noGenre": "Không có thể loại nào.",
+        "genreNoBooks": "Hiện chưa có cuốn sách nào thuộc thể loại này."
+    },
+    "error": {
+        "title": "ERROR",
+        "Generic": "Đã xảy ra lỗi.",
+        "Invalid": "Yêu cầu không hợp lệ.",
+        "NotFound": "Không tìm thấy kết quả."
+    },
+    "detail": {
+        "author": {
+            "name": "Tác giả",
+            "books": "Sách",
+            "dob": "Ngày sinh",
+            "dod": "Ngày mất"
+        },
+        "book": {
+            "title": "Tiêu đề",
+            "summary": "Tóm tắt",
+            "genre": "Thể loại",
+            "isbn": "Mã ISBN",
+            "copies": "Các bản sao",
+            "imprint": "NXB",
+            "dueBack": "Ngày trả dự kiến",
+            "id": "Mã số",
+            "status": "Trạng thái"
+        },
+        "unknown": "Không rõ",
+        "notSpecified": "Chưa xác định"
     }
 }

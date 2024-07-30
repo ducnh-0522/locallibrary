@@ -9,14 +9,26 @@ const bookInstanceDAO = new BookInstanceDAO();
 export const bookInstList = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
     const bookInstances = await bookInstanceDAO.getBookInstances()
     res.render('bookInstances/', { 
-        bookInstances, 
         title: req.t('bookInstance.title.listOfBookInstance'),
+        bookInstances,
         BookInstanceStatus
     })
 });
 
 export const bookInstDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send(`[NOT IMPLEMENTED] BookInstance detail: ${req.params.id}`);
+    const id = parseInt (req.params.id);
+    if (isNaN(id)) {
+        return res.render('error', { message: req.t('error.Invalid') });
+    }
+    const bookInstance = await bookInstanceDAO.getBookInstanceById(id);
+    if (!bookInstance) {
+        return res.render('error', { message: req.t('error.NotFound') });
+    }
+    res.render('bookInstances/show' , {
+        bookInstance,
+        bookInstanceBook: bookInstance.book,
+        BookInstanceStatus
+    });
 });
 
 export const bookInstCreateGet = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

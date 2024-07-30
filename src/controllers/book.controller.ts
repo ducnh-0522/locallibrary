@@ -3,6 +3,7 @@ import { AuthorDAO } from '../services/author.dao';
 import { BookDAO } from '../services/book.dao';
 import { BookInstanceDAO } from '../services/book_instance.dao';
 import { GenreDAO } from '../services/genre.dao';
+import { BookInstanceStatus } from '../enums/book_instance_status';
 import asyncHandler from 'express-async-handler';
 import i18next from 'i18next';
 
@@ -42,7 +43,20 @@ export const bookList = asyncHandler(async (req: Request, res: Response, next: N
 });
 
 export const bookDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send(`[NOT IMPLEMENTED] Book detail: ${req.params.id}`);
+    const id = parseInt (req.params.id);
+    if (isNaN(id)) {
+        return res.render('error', { message: req.t('error.Invalid') });
+    }
+    const book = await bookDAO.getBookById(id);
+    if (!book) {
+        return res.render('error', { message: req.t('error.NotFound') });
+    }
+    res.render('books/show' , {
+        book,
+        bookInstances: book.instances,
+        bookGenres: book.genres,
+        BookInstanceStatus
+    });
 });
 
 export const bookCreateGet = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

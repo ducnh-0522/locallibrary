@@ -25,27 +25,25 @@
     "book": {
         "title": {
             "listOfBook": "Book List",
-            "noBook": "There are no books",
-            "summary": "Summary:",
-            "isbn": "ISBN",
-            "unknownSummary": "Unknown Summary",
-            "unknownIsbn": "Unknown ISBN"
-        }
+            "bookDetail": "Book Details"
+        },
+        "noBook": "There are no books.",
+        "bookNoInstances": "There are no copies of this book in the library."
     },
     "author": {
         "title": {
-            "unknownAuthor": "Unknown Author",
             "listOfAuthor": "Author List",
-            "noAuthor": "There are no authors"
-        }
+            "authorDetail": "Author Details"
+        },
+        "noAuthor": "There are no authors.",
+        "authorNoBooks": "This author has no books."
     },
     "bookInstance": {
         "title": {
             "listOfBookInstance": "Book Instance List",
-            "noBookInstance": "There are no book instances"
+            "bookInstanceDetail": "Book Instance Details"
         },
-        "imprint": "Imprint",
-        "dueBack": "Due back",
+        "bookNoInstances": "There are no book instances.",
         "status": {
             "available": "Available",
             "maintenance": "Maintenance",
@@ -55,7 +53,36 @@
     "genre": {
         "title": {
             "listOfGenre": "Genre List",
-            "noGenre": "There are no genres"
-        }
+            "genreDetail": "Genre Details"
+        },
+        "noGenre": "There are no genres.",
+        "genreNoBooks": "This genre has no books."
+    },
+    "error": {
+        "title": "ERROR",
+        "Generic": "An error occurred.",
+        "Invalid": "Invalid request.",
+        "NotFound": "Item not found."
+    },
+    "detail": {
+        "author": {
+            "name": "Author",
+            "books": "Books",
+            "dob": "Birth",
+            "dod": "Death"
+        },
+        "book": {
+            "title": "Title",
+            "summary": "Summary",
+            "genre": "Genre",
+            "isbn": "ISBN",
+            "copies": "Copies",
+            "imprint": "Imprint",
+            "dueBack": "Due Back",
+            "id": "ID",
+            "status": "Status"
+        },
+        "unknown": "Unknown",
+        "notSpecified": "Not specified."
     }
 }
