@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+  h1 #{t('detail.book.title')}: #{book.title}
+  p
+    strong #{t('detail.author.name')}: 
+    a(href=`/authors/${book.author.id}`) #{book.author.firstName} #{book.author.familyName}
+  p
+    strong #{t('detail.book.summary')}: 
+    | #{book.summary}
+  if book.isbn
+    p
+      strong #{t('detail.book.isbn')}: 
+      | #{book.isbn}
+  p
+    strong #{t('detail.book.genre')}: 
+    if bookGenres.length > 0
+      each genre, index in bookGenres
+        a(href=`/genres/${genre.id}`) #{genre.name}
+        if index < bookGenres.length - 1
+          | , 
+    else
+      | #{t('detail.notSpecified')}
+  div(class = 'mt-5 ml-5')
+    h4 #{t('detail.book.copies')}
+    if bookInstances.length > 0
+      each instance in bookInstances
+        hr
+        if instance.status == BookInstanceStatus.Available
+          span(class='text-success') #{t('bookInstance.status.available')}
+        else if instance.status == BookInstanceStatus.Maintenance
+          span(class='text-warning') #{t('bookInstance.status.maintenance')}
+        else if instance.status == BookInstanceStatus.Loaned
+          span(class='text-danger') #{t('bookInstance.status.loaned')}
+        else 
+          span(class='text-secondary') #{t('detail.unknown')}
+
+        if instance.status != BookInstanceStatus.Available
+          p
+            strong #{t('detail.book.dueBack')}: 
+            | #{instance.dueBack}
+        p
+          strong Id: 
+          a(href=`/bookInstances/${instance.id}`) #{instance.id}
+    else
+      p #{t('bookInstance.bookNoInstances')}

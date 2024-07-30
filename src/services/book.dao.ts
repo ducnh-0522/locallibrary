@@ -14,4 +14,11 @@ export class BookDAO {
             relations: ['author'] 
         });
     }
+
+    async getBookById(id: number) {
+        return await this.bookRepository.findOne({
+            where: { id },
+            relations: ['author' , 'genres' , 'instances']
+        });
+    }
 }

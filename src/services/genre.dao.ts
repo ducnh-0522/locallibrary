@@ -11,4 +11,11 @@ export class GenreDAO {
     async getGenres() {
         return await this.genreRepository.find({ order: { name: 'ASC' } })
     }
+
+    async getGenreById(id: number) {
+        return await this.genreRepository.findOne({
+            where: { id },
+            relations: ['books']
+        });
+    }
 }

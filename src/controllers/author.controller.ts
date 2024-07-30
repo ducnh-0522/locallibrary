@@ -11,7 +11,18 @@ export const authorList = asyncHandler(async (req: Request, res: Response, next:
 });
 
 export const authorDetail = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    res.send(`[NOT IMPLEMENTED] Author detail: ${req.params.id}`);
+    const id = parseInt (req.params.id);
+    if (isNaN(id)) {
+        return res.render('error', { message: req.t('error.Invalid') });
+    }
+    const author = await authorDAO.getAuthorById(id);
+    if (!author) {
+        return res.render('error', { message: req.t('error.NotFound') });
+    }
+    res.render('authors/show' , {
+        author,
+        authorBooks: author.books,
+    });
 });
 
 export const authorCreateGet = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {

@@ -4,10 +4,11 @@ import * as bookController from '../controllers/book.controller';
 const router = express.Router();
 
 router.get('/', bookController.bookList);
-router.get('/:id', bookController.bookDetail);
 
 router.get('/create', bookController.bookCreateGet);
 router.post('/create', bookController.bookCreatePost);
+
+router.get('/:id', bookController.bookDetail);
 
 router.get('/:id/delete', bookController.bookDeleteGet);
 router.post('/:id/delete', bookController.bookDeletePost);
