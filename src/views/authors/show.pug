@@ -1,23 +1,27 @@
 extends ../layout
 
 block content
-  h1 #{t('detail.author.name')} #{author.firstName} #{author.familyName}
-  p
-    strong #{t('detail.author.dob')}:
-    if author.dateOfBirth
-      |  #{author.dateOfBirth}
-    else 
-      |  #{t('detail.unknown')}
-  p
-    if author.dateOfDeath
-      strong #{t('detail.author.dod')}:
-      |  #{author.dateOfDeath}
-  div(class = 'mt-5 ml-5')
-    h4 #{t('detail.author.books')}
-    if authorBooks.length > 0
-      each book in authorBooks
-        hr
-        a(href=`/books/${book.id}`) #{book.title}
-        p #{book.summary}
-    else
-      p #{t('author.authorNoBooks')}
+    h1 #{t('detail.author.name')} #{author.firstName} #{author.familyName}
+    p
+        strong #{t('detail.author.dob')}:
+        if author.dateOfBirth
+            |  #{author.dateOfBirth}
+        else 
+            |  #{t('detail.unknown')}
+    p
+        if author.dateOfDeath
+            strong #{t('detail.author.dod')}:
+            |  #{author.dateOfDeath}
+            div(class = 'mt-5 ml-5')
+                h4 #{t('detail.author.books')}
+                if authorBooks.length > 0
+                    each book in authorBooks
+                        hr
+                        a(href=`/books/${book.id}`) #{book.title}
+                        p #{book.summary}
+                else
+                    p #{t('author.authorNoBooks')}
+    hr
+    p
+        a(href=`${author.id}/update`, class="btn btn-warning") #{t('detail.update')}
+        a(href=`${author.id}/delete`, class="btn btn-danger") #{t('detail.delete')}

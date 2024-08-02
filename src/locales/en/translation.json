@@ -25,7 +25,10 @@
     "book": {
         "title": {
             "listOfBook": "Book List",
-            "bookDetail": "Book Details"
+            "bookDetail": "Book Details",
+            "create": "Create New Book",
+            "update": "Update Book",
+            "delete": "Delete Book"
         },
         "noBook": "There are no books.",
         "bookNoInstances": "There are no copies of this book in the library."
@@ -33,7 +36,10 @@
     "author": {
         "title": {
             "listOfAuthor": "Author List",
-            "authorDetail": "Author Details"
+            "authorDetail": "Author Details",
+            "create": "Create New Author",
+            "update": "Update Author",
+            "delete": "Delete Author"
         },
         "noAuthor": "There are no authors.",
         "authorNoBooks": "This author has no books."
@@ -41,7 +47,10 @@
     "bookInstance": {
         "title": {
             "listOfBookInstance": "Book Instance List",
-            "bookInstanceDetail": "Book Instance Details"
+            "bookInstanceDetail": "Book Instance Details",
+            "create": "Create New Instance of Book",
+            "update": "Update Instance",
+            "delete": "Delete Instance"
         },
         "bookNoInstances": "There are no book instances.",
         "status": {
@@ -53,7 +62,10 @@
     "genre": {
         "title": {
             "listOfGenre": "Genre List",
-            "genreDetail": "Genre Details"
+            "genreDetail": "Genre Details",
+            "create": "Create New Genre",
+            "update": "Update Genre",
+            "delete": "Delete Genre"
         },
         "noGenre": "There are no genres.",
         "genreNoBooks": "This genre has no books."
@@ -62,11 +74,37 @@
         "title": "ERROR",
         "Generic": "An error occurred.",
         "Invalid": "Invalid request.",
-        "NotFound": "Item not found."
+        "NotFound": "Item not found.",
+        "empty_field": "Missing field(s).",
+        "author_form": {
+            "empty_first_name": "First name must not be empty!",
+            "empty_family_name": "Last name must not be empty!",
+            "invalid_first_name": "First name must be alphanumeric.",
+            "invalid_family_name": "Family name must be alphanumeric.",
+            "invalid_dob": "Invalid Date of Birth.",
+            "invalid_dod": "Invalid Date of Death.",
+            "author_has_book": "To be deleted, an author must have no book records."
+        },
+        "book_form": {
+            "empty_title": "Title must not be empty!",
+            "empty_author": "Author must be selected!",
+            "empty_summary": "Summary must not be empty!",
+            "empty_isbn": "ISBN must not be empty!",
+            "book_has_instance": "To be deleted, a book must have no instances."
+        },
+        "book_instance_form": {
+            "invalid_due_back": "Invalid due back date."
+        },
+        "genre_form": {
+            "invalid_name": "Genre name must be at least 3 characters long and must be unique.",
+            "genre_has_book": "To be deleted, a genre must have no books."
+        }
     },
     "detail": {
         "author": {
             "name": "Author",
+            "first_name": "First Name",
+            "family_name": "Family Name",
             "books": "Books",
             "dob": "Birth",
             "dod": "Death"
@@ -83,6 +121,11 @@
             "status": "Status"
         },
         "unknown": "Unknown",
-        "notSpecified": "Not specified."
-    }
+        "notSpecified": "Not specified.",
+        "update": "Update",
+        "delete": "Delete",
+        "select": "-- Select one --",
+        "submit": "Submit"
+    },
+    "delete_warning": "Are you sure you want to delete? This action cannot be undone."
 }

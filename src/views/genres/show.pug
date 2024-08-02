@@ -2,7 +2,6 @@ extends ../layout
 
 block content 
   h1 #{t('detail.book.genre')} #{genre.name}
-
   div(class = 'mt-5 ml-5')
     h4 #{t('detail.author.books')}
     if genreBooks.length > 0
@@ -12,3 +11,7 @@ block content
         p #{book.summary}
     else
       p #{t('genre.genreNoBooks')}
+    hr
+    p
+      a(href=`${genre.id}/update`, class="btn btn-warning") #{t('detail.update')}
+      a(href=`${genre.id}/delete`, class="btn btn-danger") #{t('detail.delete')}

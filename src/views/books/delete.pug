@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    h1 #{t(title)} #{book.title}
+    div(class = 'mt-5 ml-5')
+    if book.instances.length > 0
+        p #[strong #{t('error.book_form.book_has_instance')}]
+        p #[strong #{t('detail.book.copies')}]
+            each instance in bookInstances
+                hr
+                a(href=`/bookInstances/${instance.id}`) #{book.title} 
+                if instance.status === BookInstanceStatus.Available
+                  span(class='text-success')  #{t('bookInstance.status.available')} 
+                else if instance.status === BookInstanceStatus.Maintenance
+                  span(class='text-warning')  #{t('bookInstance.status.maintenance')} 
+                else if instance.status === BookInstanceStatus.Loaned
+                  span(class='text-danger')  #{t('bookInstance.status.loaned')} 
+                else
+                  #{t('instance.status')}
+    else
+        p #{t('delete_warning')}
+        form(method='POST')
+            div.form-group
+                input#bookid.form-control(type='hidden' name='bookId', value=book.id )
+            button.btn.btn-primary(type='submit') #{t('detail.delete')}

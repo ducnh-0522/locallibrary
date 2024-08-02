@@ -25,7 +25,10 @@
     "book": {
         "title": {
             "listOfBook": "Danh sách các tựa sách có trong thư viện",
-            "bookDetail": "Thông tin chi tiết về sách"
+            "bookDetail": "Thông tin chi tiết về sách",
+            "create": "Tạo mới sách",
+            "update": "Cập nhật Book",
+            "delete": "Xóa Book"
         },
         "noBook": "Không có quyển sách nào.",
         "bookNoInstances": "Không có bản sao nào của cuốn sách này."
@@ -33,7 +36,10 @@
     "author": {
         "title": {
             "listOfAuthor": "Danh sách tác giả",
-            "authorDetail": "Thông tin chi tiết về tác giả"
+            "authorDetail": "Thông tin chi tiết về tác giả",
+            "create": "Tạo mới tác giả",
+            "update": "Cập nhật tác giả",
+            "delete": "Xóa tác giả"
         },
         "noAuthor": "Không có tác giả nào.",
         "authorNoBooks": "Tác giả này chưa có tác phẩm nào."
@@ -41,7 +47,10 @@
     "bookInstance": {
         "title": {
             "listOfBookInstance": "Danh sách các bản sao sách có trong thư viện",
-            "bookInstanceDetail": "Thông tin chi tiết về bản sao sách"
+            "bookInstanceDetail": "Thông tin chi tiết về bản sao sách",
+            "create": "Tạo mới bản sao",
+            "update": "Cập nhật bản sao",
+            "delete": "Xóa bản sao"
         },
         "bookNoInstances": "Không có bản sao sách nào.",
         "status": {
@@ -53,20 +62,49 @@
     "genre": {
         "title": {
             "listOfGenre": "Danh sách thể loại",
-            "genreDetail": "Thông tin chi tiết về thể loại"
+            "genreDetail": "Thông tin chi tiết về thể loại",
+            "create": "Tạo mới thể loại",
+            "update": "Cập nhật thể loại",
+            "delete": "Xóa thể loại"
         },
         "noGenre": "Không có thể loại nào.",
         "genreNoBooks": "Hiện chưa có cuốn sách nào thuộc thể loại này."
     },
     "error": {
-        "title": "ERROR",
+        "title": "LỖI",
         "Generic": "Đã xảy ra lỗi.",
         "Invalid": "Yêu cầu không hợp lệ.",
-        "NotFound": "Không tìm thấy kết quả."
+        "NotFound": "Không tìm thấy kết quả.",
+        "empty_field": "Điền thiếu trường thông tin.",
+        "author_form": {
+            "empty_first_name": "Tên không được để trống!",
+            "empty_family_name": "Họ không được để trống!",
+            "invalid_first_name": "Tên chỉ được chứa chữ cái và số.",
+            "invalid_family_name": "Họ chỉ được chứa chữ cái và số.",
+            "invalid_dob": "Ngày sinh không hợp lệ.",
+            "invalid_dod": "Ngày mất không hợp lệ.",
+            "author_has_book": "Để xóa tác giả, phải đảm bảo tác giả không có sách liên kết."
+        },
+        "book_form": {
+            "empty_title": "Tiêu đề không được để trống!",
+            "empty_author": "Phải chọn tác giả!",
+            "empty_summary": "Tóm tắt không được để trống!",
+            "empty_isbn": "ISBN không được để trống!",
+            "book_has_instance": "Để xóa sách, phải đảm bảo sách không có bản sao."
+        },
+        "book_instance_form": {
+            "invalid_due_back": "Ngày trả sách không hợp lệ."
+        },
+        "genre_form": {
+            "invalid_name": "Tên thể loại cần ít nhất 3 ký tự và phải duy nhất.",
+            "genre_has_book": "Để xóa thể loại, phải đảm bảo thể loại không có sách liên kết."
+        }
     },
     "detail": {
         "author": {
             "name": "Tác giả",
+            "first_name": "Tên",
+            "family_name": "Họ",
             "books": "Sách",
             "dob": "Ngày sinh",
             "dod": "Ngày mất"
@@ -83,6 +121,11 @@
             "status": "Trạng thái"
         },
         "unknown": "Không rõ",
-        "notSpecified": "Chưa xác định"
-    }
+        "notSpecified": "Chưa xác định",
+        "update": "Cập nhật",
+        "delete": "Xóa",
+        "select": "-- Chọn --",
+        "submit": "Gửi"
+    },
+    "delete_warning": "Bạn có chắc chắn muốn xóa? Thao tác này không thể hoàn tác."
 }
