@@ -1,6 +1,7 @@
 import { AppDataSource } from '../config/data-source';
 import { BookInstance } from '../entity/bookInstance.entity';
 import { BookInstanceStatus } from '../enums/book_instance_status';
+import { Book } from '../entity/book.entity';
 
 export class BookInstanceDAO {
     private bookInstanceRepository = AppDataSource.getRepository(BookInstance);
@@ -29,5 +30,37 @@ export class BookInstanceDAO {
             where: { id },
             relations: ['book'],
         });
+    }
+
+    async createBookInstance(
+        book: Book,
+        imprint: string,
+        status: BookInstanceStatus,
+        dueBack?: Date
+    ): Promise<BookInstance> {
+        const bookInstance = new BookInstance();
+        bookInstance.book = book;
+        bookInstance.imprint = imprint;
+        bookInstance.status = status;
+        if (dueBack) bookInstance.dueBack = dueBack;
+        return await this.bookInstanceRepository.save(bookInstance);
+    }
+
+    async updateBookInstance(
+        bookInstance: BookInstance,
+        book: Book,
+        imprint: string,
+        status: BookInstanceStatus,
+        dueBack?: Date
+    ): Promise<BookInstance> {
+        bookInstance.book = book;
+        bookInstance.imprint = imprint;
+        bookInstance.status = status;
+        if (dueBack) bookInstance.dueBack = dueBack;
+        return await this.bookInstanceRepository.save(bookInstance);
+    }
+
+    async deleteBookInstance(id: number) {
+        return await this.bookInstanceRepository.delete(id);
     }
 }

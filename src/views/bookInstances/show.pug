@@ -22,3 +22,7 @@ block content
     p
       strong #{t('detail.book.dueBack')}: 
       | #{bookInstance.dueBack}
+  hr
+  p
+    a(href=`${bookInstance.id}/update`, class="btn btn-warning") #{t('detail.update')}
+    a(href=`${bookInstance.id}/delete`, class="btn btn-danger") #{t('detail.delete')}

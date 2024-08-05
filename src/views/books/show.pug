@@ -44,3 +44,7 @@ block content
           a(href=`/bookInstances/${instance.id}`) #{instance.id}
     else
       p #{t('bookInstance.bookNoInstances')}
+    hr
+    p
+      a(href=`${book.id}/update`, class="btn btn-warning") #{t('detail.update')}
+      a(href=`${book.id}/delete`, class="btn btn-danger") #{t('detail.delete')}

@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+    h1= title
+    form(method='POST')
+        div.form-group
+            label(for='first_name') #{t('detail.author.first_name')}:
+            input#first_name.form-control(
+                type='text'
+                placeholder='First name'
+                name='first_name'
+                required
+                value=(author===undefined ? '' : author.firstName)
+            )
+        div.form-group
+            label(for='family_name') #{t('detail.author.family_name')}:
+            input#family_name.form-control(
+                type='text'
+                placeholder='Family name'
+                name='family_name'
+                required
+                value=(author===undefined ? '' : author.familyName)
+            )
+        div.form-group
+            label(for='date_of_birth') #{t('detail.author.dob')}:
+            input#date_of_birth.form-control(
+                type='date'
+                name='date_of_birth'
+                value=(author===undefined ? '' : author.dateOfBirth)
+            )
+        div.form-group
+            label(for='date_of_death') #{t('detail.author.dod')}:
+            input#date_of_death.form-control(
+                type='date'
+                name='date_of_death'
+                value=(author===undefined ? '' : author.dateOfDeath)
+            )
+        button.btn.btn-primary(type='submit') #{t('detail.submit')}
+    if errors
+        ul
+            for error in errors
+                li.mb!= error.msg

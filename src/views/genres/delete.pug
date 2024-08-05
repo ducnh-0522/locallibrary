@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1 #{title}: #{genre.name}
+    if genreBooks.length > 0
+        p #[strong #{t('error.genre_form.genre_has_book')}]
+        p #[strong #{t('detail.book.title')}]
+            each book in genreBooks
+                hr
+                a(href=`/books/${book.id}`) #{book.title}
+    else
+        p #{t('delete_warning')}
+        form(method='POST')
+            div.form-group
+                input#genreId.form-control(type='hidden' name='genreId', value=genre.id)
+            button.btn.btn-primary(type='submit') #{t('detail.delete')}
